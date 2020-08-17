@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BST</title>
+  <!-- CSS only -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  <!-- JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+  <script src="./script.js"></script>
+
+</head>
+
+<body>
+  <div class="container mw-100" style="height:100vh">
+    <div class="row h-100 md-flex">
+      <div class="col-md-3 h-100 h-md-auto" style="display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      background: #000000d1;">
+        <div class="p-3">
+          <input class="form-control w-100" type="number" id="inputNumber">
+        </div>
+        <div class="p-3">
+          <button class="w-100 btn btn-primary" onclick="addNode()">Add A Node</button>
+        </div>
+        <div class="p-3">
+          <button class="w-100 btn btn-primary" onclick="search()">Search A Node</button>
+        </div>
+        <div class="p-3">
+          <button class="w-100 btn btn-primary" onclick="dummyData()">Add Dummy Data</button>
+        </div>
+        <div class="p-3">
+          <button class="w-100 btn btn-primary" onclick="inOrder()">inOrder</button>
+        </div>
+        <div class="p-3">
+          <button class="w-100 btn btn-primary" onclick="preOrder()">preOrder</button>
+        </div>
+        <div class="p-3">
+          <button class="w-100 btn btn-primary" onclick="postOrder()">postOrder</button>
+        </div>
+      </div>
+      <div class="col-md-9 h-100 h-md-auto" style="overflow:scroll">
+        <div id="graphContainer" class="py-3">
+        </div>
+      </div>
+    </div>
+  </div>
+  <style>
+    .valueContainer {
+      margin: auto;
+      width: 50px;
+      height: 50px;
+      background: #007bff85;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 50px;
+      color: white;
+    }
+
+    .valueContainer.visited {
+      width: 60px;
+      height: 60px;
+      line-height: 60px;
+      background: #007bff85;
+      border-radius: 50%;
+      box-shadow: 0px 0px 10px 0px #ff3737;
+    }
+
+    .btn-primary {
+      color: #fff;
+      background-color: #2e2e2ebf !important;
+    }
+
+    /* .children{
+      justify-content: flex-end;
+    } */
+    @media(max-width: 800px) {
+      .md-flex {
+        display: flex;
+        flex-direction: column-reverse;
+      }
+
+    }
+
+    .h-md-auto {
+      height: unset !important;
+    }
+  </style>
+</body>
+
+</html>
