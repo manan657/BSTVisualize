@@ -26,7 +26,6 @@ class BST {
 
   // helper function
   insertNode(root, newNode) {
-    console.log(parseFloat(newNode.value), parseFloat(root.value), parseFloat(newNode.value) < parseFloat(root.value))
     if (parseFloat(newNode.value) < parseFloat(root.value)) {
       // If no left child, then just insesrt to the left
       if (!root.left) {
@@ -115,7 +114,7 @@ class BST {
       return Boolean(this.searchNode(this.root, value))
     }
   }
-  markVisited(id){
+  markVisited(id) {
     document.querySelector(id).classList.add('visited')
   }
   searchNode(root, value) {
@@ -132,27 +131,27 @@ class BST {
       return root
     }, 500)
   }
-  preOrder(root){
-    if(root){
-      setTimeout(() =>{
-              this.preOrder(root.left)
-      this.markVisited(`#node-${root.value} .valueContainer`)
-      this.preOrder(root.right)
-      },500)
+  preOrder(root) {
+    if (root) {
+      setTimeout(() => {
+        this.preOrder(root.left)
+        this.markVisited(`#node-${root.value} .valueContainer`)
+        this.preOrder(root.right)
+      }, 500)
 
     }
   }
-  postOrder(root){
-    if(root){
-      setTimeout(() =>{},500)
+  postOrder(root) {
+    if (root) {
+      setTimeout(() => { }, 500)
       this.markVisited(`#node-${root.value} .valueContainer`)
       this.postOrder(root.left)
       this.postOrder(root.right)
     }
   }
-  inOrder(root){
-    if(root){
-      setTimeout(() =>{},500)
+  inOrder(root) {
+    if (root) {
+      setTimeout(() => { }, 500)
       this.inOrder(root.left)
       this.inOrder(root.right)
       this.markVisited(`#node-${root.value} .valueContainer`)
@@ -193,7 +192,6 @@ function addNewDiv(parentId, value, position) {
   row.appendChild(col)
   element.push(value)
   if (element.length > 8 && element.length < 15) {
-    console.log(document.getElementById('graphContainer').style.width)
     document.getElementById('graphContainer').style.width = '200%'
     document.getElementById('graphContainer').style.transform = "scale(0.7)"
     document.querySelectorAll('.valueContainer').forEach(element => {
@@ -201,13 +199,11 @@ function addNewDiv(parentId, value, position) {
     })
   }
   if (element.length > 15 && element.length < 20) {
-    console.log(document.getElementById('graphContainer').style.width)
     document.getElementById('graphContainer').style.width = '300%'
   }
   if (position == 'root') {
     document.getElementById('graphContainer').appendChild(row)
   } else {
-    console.log(document.querySelector(`#node-${parentId} .children`).firstChild)
     row.style.width = '50%'
     if (position == 'left') {
       document.querySelector(`#node-${parentId} .children`).insertBefore(row, document.querySelector(`#node-${parentId} .children`).firstChild)
@@ -220,6 +216,7 @@ function addNewDiv(parentId, value, position) {
       }
 
     }
+
   }
   document.querySelector(`#node-${parentId} .children`).scrollIntoView()
 }
@@ -242,12 +239,12 @@ function dummyData() {
 function addValue(x) {
   graph.insert(x)
 }
-function inOrder(){
+function inOrder() {
   graph.inOrder(graph.root)
 }
-function preOrder(){
+function preOrder() {
   graph.preOrder(graph.root)
 }
-function postOrder(){
+function postOrder() {
   graph.postOrder(graph.root)
 }
